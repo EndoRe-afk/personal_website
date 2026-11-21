@@ -4,17 +4,17 @@ A personal portfolio website presented in the style of the *Persona 3 Reload* me
 
 ## Structure
 
-| Section  | Purpose                                              |
-|----------|------------------------------------------------------|
-| Title    | Landing screen with name and tagline                 |
-| Status   | Personal introduction and background                 |
-| Skill    | Technical skills                                     |
-| Commu    | Projects, education and experience (Social Link list)|
-| Item     | Résumé and supporting documents                      |
-| Quest    | Current goals                                        |
-| System   | Contact details and social profiles                  |
+| Menu option       | Opens                                  |
+|-------------------|----------------------------------------|
+| Projects          | Social Link list, Projects tab         |
+| Experience        | Social Link list, Experience tab       |
+| Education         | Social Link list, Education tab        |
+| Socials           | Contact details and social profiles    |
+| About Me          | Status screen: introduction and background |
+| Skills            | Technical skills                       |
+| Upcoming Projects | Quest log of planned work              |
 
-Each section can be linked to directly, for example `index.html#commu`.
+A title screen precedes the main menu. Each section can be linked to directly, for example `index.html#projects`.
 
 ## Usage
 

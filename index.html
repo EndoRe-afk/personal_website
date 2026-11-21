@@ -67,7 +67,7 @@ a{color:inherit;text-decoration:none}
 .art .ph span{font-weight:700;font-style:italic;font-size:24px;color:rgba(200,240,255,.8)}
 .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
-.menu{position:absolute;left:80px;top:120px;list-style:none;transform:rotate(-8deg);z-index:4}
+.menu{position:absolute;left:80px;top:104px;list-style:none;transform:rotate(-8deg);z-index:4}
 .mi{position:relative;width:max-content;font-family:Anton;font-size:var(--fs);line-height:.8;letter-spacing:-1px;
   color:var(--c);cursor:pointer;user-select:none;white-space:nowrap;
   transform:translateX(var(--x)) skewX(-12deg);transition:transform .18s cubic-bezier(.2,.9,.2,1),color .15s}
@@ -227,7 +227,7 @@ body.m.sub .clock{display:none}
 body.m .prompts{display:none}
 body.m .art{display:none}
 body.m .menu{position:relative;left:auto;top:auto;margin-left:22px;transform:rotate(-7deg)}
-body.m .mi{font-size:calc(var(--fs) * .66);transform:translateX(calc(var(--x) * .45)) skewX(-12deg)}
+body.m .mi{font-size:min(calc(var(--fs) * .66), calc((100vw - 90px) / (var(--len) * .52)));transform:translateX(calc(var(--x) * .45)) skewX(-12deg)}
 body.m .mi.active{transform:translateX(calc(var(--x) * .45 + 10px)) skewX(-12deg) scale(1.12)}
 body.m .mi .tri{width:260px}
 body.m .desc{position:fixed;left:10px;right:10px;bottom:16px;width:auto;height:auto;min-height:60px;padding:10px 26px;gap:12px;flex-wrap:wrap}
@@ -316,13 +316,14 @@ body.m .t-press{font-size:22px;letter-spacing:6px;bottom:70px}
 const CONTENT = {
   name: 'JOSHUA',
   tagline: 'YOUR TAGLINE HERE',
-  menu: [
-    {id:'skill',    label:'SKILL',    maps:'TECH SKILLS',  desc:'Abilities you can use in battle.'},
-    {id:'item',     label:'ITEM',     maps:'RESUME',       desc:'Check your inventory.'},
-    {id:'status',   label:'STATUS',   maps:'ABOUT ME',     desc:"Check your party's condition."},
-    {id:'quest',    label:'QUEST',    maps:'CURRENT GOALS',desc:'Requests you have accepted.'},
-    {id:'commu',    label:'COMMU',    maps:'PROJECTS · EDU · WORK', desc:"Social Links you've forged."},
-    {id:'system',   label:'SYSTEM',   maps:'CONTACT',      desc:'Socials and ways to reach me.'},
+  menu: [ // label = what visitors see; tag = the game screen it opens
+    {id:'projects',   label:'PROJECTS',          tag:'COMMU',  desc:"Social Links you've forged."},
+    {id:'experience', label:'EXPERIENCE',        tag:'COMMU',  desc:'Bonds formed on the job.'},
+    {id:'education',  label:'EDUCATION',         tag:'COMMU',  desc:'Where the training happened.'},
+    {id:'system',     label:'SOCIALS',           tag:'SYSTEM', desc:'Ways to reach me.'},
+    {id:'status',     label:'ABOUT ME',          tag:'STATUS', desc:"Check your party's condition."},
+    {id:'skill',      label:'SKILLS',            tag:'SKILL',  desc:'Abilities you can use in battle.'},
+    {id:'quest',      label:'UPCOMING PROJECTS', tag:'QUEST',  desc:'Requests not yet completed.'},
   ],
   status: {
     party: [
@@ -338,7 +339,7 @@ const CONTENT = {
     stats: [ {name:'ACADEMICS', lv:3}, {name:'CHARM', lv:3}, {name:'COURAGE', lv:3} ], // out of 6
   },
   commu: {
-    tabs: ['EDUCATION','PROJECTS','EXPERIENCE'],
+    tabs: ['PROJECTS','EXPERIENCE','EDUCATION'],  // each tab is also a main-menu page
     startTab: 'PROJECTS',
     links: [
       {tab:'PROJECTS',   arcana:'FOOL',       num:'0',    title:'PROJECT 01', sub:'UNTITLED', rank:3},
@@ -358,12 +359,9 @@ const CONTENT = {
       {lab:'FIRE', name:'Skill 01', val:'Lv ?'}, {lab:'ICE', name:'Skill 02', val:'Lv ?'},
       {lab:'ELEC', name:'Skill 03', val:'Lv ?'}, {lab:'WIND', name:'Skill 04', val:'Lv ?'},
       {lab:'LIGHT',name:'Skill 05', val:'Lv ?'}]},
-    item:     {title:'ITEM',     sub:'RESUME & DOCUMENTS', rows:[
-      {lab:'KEY',  name:'Resume',       val:'×1'}, {lab:'KEY', name:'Document 02', val:'×1'},
-      {lab:'MISC', name:'Document 03',  val:'×1'}]},
-    quest:    {title:'QUEST',    sub:'CURRENT GOALS', rows:[
-      {lab:'REQ 01', name:'Quest 01', val:'IN PROGRESS'}, {lab:'REQ 02', name:'Quest 02', val:'IN PROGRESS'},
-      {lab:'REQ 03', name:'Quest 03', val:'NEW'}]},
+    quest:    {title:'QUEST',    sub:'UPCOMING PROJECTS', rows:[
+      {lab:'REQ 01', name:'Upcoming 01', val:'PLANNED'}, {lab:'REQ 02', name:'Upcoming 02', val:'PLANNED'},
+      {lab:'REQ 03', name:'Upcoming 03', val:'NEW'}]},
   },
   system: {
     socials: [
@@ -436,17 +434,17 @@ $('#scr-title').addEventListener('click',()=>go('menu'));
 
 /* ---- main menu ---- */
 const LAYOUT = [ // x offset, font size, colour
-  [10,104,'var(--cyan)'],[70,86,'var(--steel)'],[0,116,'var(--cyan)'],[48,88,'var(--steel)'],[84,108,'var(--cyan)'],[30,98,'var(--steel)']];
-let menuIdx = 2;
+  [10,100,'var(--cyan)'],[56,84,'var(--steel)'],[24,90,'var(--cyan)'],[70,96,'var(--steel)'],[0,106,'var(--cyan)'],[44,88,'var(--steel)'],[16,64,'var(--cyan)']];
+let menuIdx = 0;
 const menuEl = $('#menu');
 menuEl.innerHTML = CONTENT.menu.map((m,i)=>{
   const [x,fs,c]=LAYOUT[i%LAYOUT.length];
-  return `<li class="mi" data-i="${i}" style="--i:${i};--x:${x}px;--fs:${fs}px;--c:${c}"><span class="tri"></span><span class="hl"></span><span class="t">${esc(m.label)}</span></li>`;
+  return `<li class="mi" data-i="${i}" style="--i:${i};--x:${x}px;--fs:${fs}px;--c:${c};--len:${m.label.length}"><span class="tri"></span><span class="hl"></span><span class="t">${esc(m.label)}</span></li>`;
 }).join('');
 function setMenu(i){
   menuIdx=(i+CONTENT.menu.length)%CONTENT.menu.length;
   menuEl.querySelectorAll('.mi').forEach((el,j)=>el.classList.toggle('active',j===menuIdx));
-  const m=CONTENT.menu[menuIdx]; $('#dtag').textContent=m.maps; $('#dtxt').textContent=m.desc;
+  const m=CONTENT.menu[menuIdx]; $('#dtag').textContent=m.tag; $('#dtxt').textContent=m.desc;
 }
 menuEl.addEventListener('mouseover',e=>{const li=e.target.closest('.mi'); if(li) setMenu(+li.dataset.i);});
 menuEl.addEventListener('click',e=>{const li=e.target.closest('.mi'); if(li) go(CONTENT.menu[+li.dataset.i].id);});
@@ -507,12 +505,14 @@ function pop(el){ el.classList.remove('pop'); void el.offsetWidth; el.classList.
     pop(d);
   }
   function setTab(t){ tab=(t+C.tabs.length)%C.tabs.length; sel=0; render(true);
+    const alias=C.tabs[tab].toLowerCase(); if(screens[alias] && cur!==alias && cur in screens && screens[cur].el===el){ cur=alias; history.replaceState(null,'','#'+alias); }
     el.querySelectorAll('.arc').forEach(a=>{a.classList.remove('in'); void a.offsetWidth; a.classList.add('in');}); }
   el.addEventListener('click',e=>{
     const b=e.target.closest('.tb'); if(b) return setTab(+b.dataset.t);
     const a=e.target.closest('.arc'); if(a){ sel=+a.dataset.i; render(false); }
   });
-  screens.commu={el, move(d){const n=items().length; if(!n)return; sel=(sel+d+n)%n; render(false);}, tab(d){setTab(tab+d);}, enter(){render(true);}};
+  const base={el, move(d){const n=items().length; if(!n)return; sel=(sel+d+n)%n; render(false);}, tab(d){setTab(tab+d);}};
+  C.tabs.forEach((t,i)=>{ screens[t.toLowerCase()] = {...base, enter(){ tab=i; sel=0; render(true); }}; });
 })();
 
 /* generic list screens */
