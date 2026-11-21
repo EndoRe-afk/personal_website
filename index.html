@@ -19,7 +19,7 @@ a{color:inherit;text-decoration:none}
 
 #stage{position:absolute;left:50%;top:50%;width:1600px;height:900px;overflow:hidden;
   transform:translate(-50%,-50%) scale(var(--s,1));
-  background:linear-gradient(180deg,#3a9cc2 0%,#1d6f99 20%,#0f4a72 48%,#082f4f 74%,#03172b 100%)}
+  background:linear-gradient(180deg,#3f7dff 0%,#1d4dff 14%,#0b2ae6 34%,#0820c4 52%,#06169a 68%,#040c6a 84%,#020536 100%)}
 
 /* ---------- underwater background ---------- */
 .bg{position:absolute;inset:0;pointer-events:none}
@@ -27,15 +27,15 @@ a{color:inherit;text-decoration:none}
   -webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.8) 35%,transparent 100%);
           mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.8) 35%,transparent 100%)}
 .caustic.a{background:
-  radial-gradient(ellipse 70px 26px at 15% 20%,rgba(200,240,255,.5),transparent 70%),
-  radial-gradient(ellipse 110px 34px at 55% 45%,rgba(190,235,255,.42),transparent 70%),
-  radial-gradient(ellipse 50px 20px at 80% 15%,rgba(210,245,255,.5),transparent 70%),
-  radial-gradient(ellipse 90px 30px at 35% 75%,rgba(180,230,250,.3),transparent 70%);
+  radial-gradient(ellipse 70px 26px at 15% 20%,rgba(130,255,255,.7),transparent 70%),
+  radial-gradient(ellipse 110px 34px at 55% 45%,rgba(110,245,255,.55),transparent 70%),
+  radial-gradient(ellipse 50px 20px at 80% 15%,rgba(160,255,255,.65),transparent 70%),
+  radial-gradient(ellipse 90px 30px at 35% 75%,rgba(100,230,255,.4),transparent 70%);
   background-size:380px 210px;animation:drift 18s linear infinite}
 .caustic.b{background:
-  radial-gradient(ellipse 60px 22px at 30% 30%,rgba(200,240,255,.42),transparent 70%),
-  radial-gradient(ellipse 120px 30px at 70% 60%,rgba(170,225,250,.34),transparent 70%),
-  radial-gradient(ellipse 40px 16px at 90% 85%,rgba(215,245,255,.42),transparent 70%);
+  radial-gradient(ellipse 60px 22px at 30% 30%,rgba(140,255,250,.55),transparent 70%),
+  radial-gradient(ellipse 120px 30px at 70% 60%,rgba(90,220,255,.45),transparent 70%),
+  radial-gradient(ellipse 40px 16px at 90% 85%,rgba(170,255,255,.55),transparent 70%);
   background-size:300px 170px;animation:drift2 13s linear infinite;opacity:.85}
 @keyframes drift{to{background-position:380px 60px}}
 @keyframes drift2{to{background-position:-300px 40px}}
@@ -44,7 +44,7 @@ a{color:inherit;text-decoration:none}
   -webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%);
   animation:sway 9s ease-in-out infinite alternate}
 @keyframes sway{to{transform:translateX(60px)}}
-.shade{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 125%,rgba(1,8,20,.8),transparent 62%)}
+.shade{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 130%,rgba(1,3,30,.85),transparent 65%)}
 #sea{position:absolute;inset:0;width:100%;height:100%}
 
 /* ---------- screens ---------- */
@@ -96,15 +96,15 @@ a{color:inherit;text-decoration:none}
 .prompts button{font-weight:800;font-style:italic}
 
 /* ---------- shared sub-screen pieces ---------- */
-.big-title{position:absolute;left:40px;top:4px;font-family:Anton;font-size:150px;line-height:1;letter-spacing:-2px;
+.big-title{position:absolute;left:44px;top:46px;font-family:Anton;font-size:150px;line-height:1;letter-spacing:-2px;
   color:#fff;text-shadow:8px 8px 0 var(--ink);transform:rotate(-4deg) skewX(-12deg);white-space:nowrap}
-.subtag{position:absolute;left:78px;top:178px;font-family:Anton;font-size:28px;letter-spacing:3px;color:#fff;
+.subtag{position:absolute;left:82px;top:220px;font-family:Anton;font-size:28px;letter-spacing:3px;color:#fff;
   background:var(--red);padding:2px 26px;transform:rotate(-4deg) skewX(-14deg)}
 .backbtn{position:absolute;left:44px;bottom:26px;z-index:7;font-family:Anton;font-size:26px;letter-spacing:2px;
   background:var(--ink);color:var(--cyan);padding:4px 22px;transform:skewX(-14deg)}
 .backbtn:hover{background:var(--red);color:#fff}
 
-.glist{position:absolute;left:70px;top:250px;width:800px}
+.glist{position:absolute;left:70px;top:300px;width:800px}
 .grow{position:relative;height:80px;margin-bottom:12px;display:flex;align-items:center;gap:22px;padding:0 44px;cursor:pointer;
   background:var(--ink);clip-path:polygon(2.5% 0,100% 0,97.5% 100%,0 100%);
   font-weight:800;font-style:italic;font-size:30px;transform:translateX(calc(var(--i) * -14px));transition:background .12s,color .12s}
@@ -113,7 +113,7 @@ a{color:inherit;text-decoration:none}
 .grow.sel{background:#fff;color:var(--ink)}
 .grow.sel .lab{color:var(--red)} .grow.sel .val{color:var(--blue)}
 
-.card{position:absolute;right:80px;top:230px;width:640px;min-height:520px;padding:54px 74px 50px;background:#fff;color:var(--ink);
+.card{position:absolute;right:80px;top:280px;width:640px;min-height:520px;padding:54px 74px 50px;background:#fff;color:var(--ink);
   clip-path:polygon(4% 0,100% 3%,96% 100%,0 97%)}
 .card .kick{font-family:Anton;font-size:24px;letter-spacing:3px;color:var(--red)}
 .card h3{font-family:Anton;font-size:60px;line-height:1;margin:6px 0 18px;font-weight:400}
@@ -131,13 +131,13 @@ a{color:inherit;text-decoration:none}
 /* ---------- STATUS ---------- */
 .ring{position:absolute;left:-470px;top:-520px;width:1060px;height:1060px;animation:spin 80s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.party{position:absolute;left:60px;top:470px;width:720px}
+.party{position:absolute;left:60px;top:500px;width:560px}
 .pm{height:68px;margin-bottom:12px;display:flex;align-items:center;gap:20px;padding:0 36px;
   background:linear-gradient(90deg,#0b1250,#1d2778);clip-path:polygon(3% 0,100% 0,97% 100%,0 100%);
   font-weight:800;font-style:italic;font-size:30px;transform:translateX(calc(var(--i) * 18px))}
 .pm.lead{background:linear-gradient(90deg,var(--pink),#fff);color:var(--ink)}
-.pm .nm{width:230px;font-family:Anton;font-style:normal;letter-spacing:1px}
-.pm .lv{width:80px;font-size:22px} .pm .lv b{font-family:Anton;font-style:normal;font-size:32px;font-weight:400}
+.pm .nm{width:230px;font-family:Anton;font-style:normal;letter-spacing:1px;font-size:34px}
+.pm .lv{font-size:22px;letter-spacing:2px} .pm .lv b{font-family:Anton;font-style:normal;font-size:40px;font-weight:400;letter-spacing:0;margin-left:6px}
 .gauge{display:flex;flex-direction:column;gap:2px;width:120px}
 .gauge .n{font-family:Anton;font-style:normal;font-size:30px;line-height:1;font-weight:400}
 .gauge .n small{font-size:16px;margin-right:4px}
@@ -147,19 +147,23 @@ a{color:inherit;text-decoration:none}
 .pm:not(.lead) .gauge.hp .n{color:var(--hp)} .pm:not(.lead) .gauge.sp .n{color:var(--sp)}
 .pm.empty{opacity:.55}
 
-.opts{position:absolute;right:110px;top:250px;width:660px}
+.opts{position:absolute;right:110px;top:196px;width:660px}
 .opt{position:relative;height:78px;margin-bottom:14px;display:flex;align-items:center;cursor:pointer;
   background:#090d33;clip-path:polygon(0 0,100% 0,97% 100%,0 100%);transform:translateX(calc(var(--i) * -16px))}
 .opt .tag{width:190px;text-align:center;font-family:Anton;font-size:44px;color:#fff;text-shadow:3px 3px 0 #000;transform:rotate(-12deg) skewX(-10deg)}
 .opt .lbl{font-family:Anton;font-size:32px;letter-spacing:3px}
 .opt.sel{background:#fff;color:var(--ink)} .opt.sel .tag{color:var(--red);text-shadow:3px 3px 0 var(--ink)}
-.sdetail{right:90px;top:530px;width:720px;min-height:300px;padding:40px 70px}
+.sdetail{right:90px;top:590px;width:720px;min-height:230px;padding:36px 70px}
+.card ul.dl{list-style:none;margin-top:8px;columns:2;column-gap:30px}
+.card ul.dl li{position:relative;padding-left:28px;margin:0 0 10px;font-size:25px;font-weight:700;break-inside:avoid}
+.card ul.dl li::before{content:'';position:absolute;left:4px;top:.42em;width:11px;height:11px;background:var(--red);transform:rotate(45deg)}
+body.m .card ul.dl{columns:1} body.m .card ul.dl li{font-size:19px}
 .stats{display:grid;grid-template-columns:150px 1fr;gap:8px 16px;margin-top:16px;align-items:center}
 .stats b{font-family:Anton;font-weight:400;font-size:26px;color:var(--blue);letter-spacing:1px}
 .seg{display:flex;gap:6px} .seg i{width:46px;height:16px;background:#dfe5f7;transform:skewX(-20deg)} .seg i.on{background:var(--blue)}
 
 /* ---------- COMMU / LIST ---------- */
-.arc-list{position:absolute;left:44px;top:236px;width:740px}
+.arc-list{position:absolute;left:44px;top:282px;width:740px}
 .arc{position:relative;height:88px;margin-bottom:12px;display:flex;align-items:center;cursor:pointer;color:var(--ink);
   background:linear-gradient(180deg,#fff 0 58%,var(--cyan) 58%);
   clip-path:polygon(0 0,100% 0,96% 100%,0 100%);transform:translateX(calc(var(--i) * 14px));transition:transform .15s}
@@ -174,14 +178,14 @@ a{color:inherit;text-decoration:none}
 .arc.sel{background:linear-gradient(180deg,#fff 0 58%,var(--red) 58%);transform:translateX(calc(var(--i) * 14px + 34px))}
 .arc.sel .num{background:var(--red)} .arc.sel .nm small{color:#fff}
 .arc-empty{font-weight:800;font-style:italic;font-size:28px;opacity:.7;padding:20px}
-.tabs{position:absolute;left:810px;top:150px;width:330px;height:660px;padding:70px 34px;background:rgba(4,12,80,.82);
+.tabs{position:absolute;left:810px;top:200px;width:330px;height:620px;padding:70px 34px;background:rgba(4,12,80,.82);
   clip-path:polygon(9% 0,100% 0,91% 100%,0 100%)}
 .tb{display:block;width:100%;text-align:left;font-family:Anton;font-size:46px;letter-spacing:1px;color:var(--cyan);margin:14px 0;padding:2px 18px;transform:skewX(-10deg)}
 .tb.on{color:#fff;background:var(--red)}
 .tb:hover:not(.on){color:#fff}
-.ccard{right:46px;top:170px;width:440px;min-height:640px;padding:50px 52px}
-.ccard h3{font-size:52px}
-.ccard dl{grid-template-columns:96px 1fr;font-size:24px}
+.ccard{right:46px;top:210px;width:440px;min-height:560px;max-height:620px;padding:40px 50px}
+.ccard h3{font-size:44px}
+.ccard dl{grid-template-columns:90px 1fr;font-size:21px;margin:12px 0}
 
 /* long numerals + no wrapping in list rows */
 .arc .num.l3{font-size:24px} .arc .num.l4{font-size:19px}
@@ -199,11 +203,11 @@ body.m .arc .num.l3{font-size:17px} body.m .arc .num.l4{font-size:14px}
 body.m .ccard p{font-size:18px}
 
 /* dense list (more than 5 links) */
-.arc-list.dense .arc{height:74px;margin-bottom:9px}
+.arc-list.dense .arc{height:68px;margin-bottom:8px}
 .arc-list.dense .arc .num{width:56px;height:56px;font-size:26px}
 .arc-list.dense .arc .nm b{font-size:32px}
 .arc-list.dense .arc .rk b{font-size:50px}
-.ccard p{font-size:22px;line-height:1.3}
+.ccard p{font-size:20px;line-height:1.3}
 .ccard dd{color:var(--ink);font-style:normal}
 .ccard dd a{color:var(--blue);text-decoration:underline}
 body.m .arc-list.dense .arc{height:66px}
@@ -215,8 +219,12 @@ body.m .arc-list.dense .arc .nm b{font-size:22px}
   clip-path:polygon(6% 0,100% 0,94% 100%,0 100%)}
 .tile small{font-family:Anton;font-size:18px;background:var(--red);padding:0 8px;letter-spacing:1px}
 .tile b{font-family:Anton;font-weight:400;font-size:56px;font-style:italic}
-.socs{position:absolute;left:90px;top:250px;width:1180px}
-.sc-title{font-size:130px}
+.socs{position:absolute;left:90px;top:calc(50% + 50px);translate:0 -50%;width:1180px}
+body.m .socs{translate:none}
+body.m #scr-system.active{display:flex;flex-direction:column}
+body.m #scr-system .sc-title{flex:none;align-self:flex-start}
+body.m #scr-system .socs{flex:none;margin:auto 0}
+.sc-title{font-size:120px;top:84px}
 body.m .sc-title{white-space:normal;font-size:66px;line-height:.92;margin-bottom:14px}
 .grow>span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .grow .val{flex:none}
@@ -227,6 +235,40 @@ body.m .sc-title{white-space:normal;font-size:66px;line-height:.92;margin-bottom
 .soc .h{font-weight:700;font-style:italic;font-size:26px;color:#8a93b8}
 .soc .go{margin-left:auto;font-family:Anton;font-size:24px;letter-spacing:2px;background:var(--ink);color:#fff;padding:4px 20px;transform:skewX(-12deg)}
 .soc.sel{background:var(--cyan)} .soc.sel .go{background:var(--red)}
+
+/* ---------- PHOTO FRAMES ---------- */
+.ph{position:relative;width:var(--sz);height:var(--sz);flex:none}
+.ph .img{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:#0a2a45;z-index:1}
+.ph .img img{display:block;width:100%;height:100%;object-fit:cover}
+.ph .ringsvg{position:absolute;inset:-20%;width:140%;height:140%;animation:spin 60s linear infinite;z-index:0}
+/* moon: pale rim + moonlight halo */
+.ph.f-moon .img{box-shadow:0 0 0 calc(var(--sz) * .025) #fff8dc,0 0 calc(var(--sz) * .22) calc(var(--sz) * .06) rgba(220,245,255,.55),0 0 calc(var(--sz) * .6) calc(var(--sz) * .2) rgba(90,200,255,.25)}
+/* slash: white rim, navy offset, red menu slash behind */
+.ph.f-slash .img{box-shadow:0 0 0 calc(var(--sz) * .03) #fff,calc(var(--sz) * .05) calc(var(--sz) * .05) 0 calc(var(--sz) * .03) var(--ink)}
+.ph.f-slash .bar{position:absolute;z-index:0;left:-38%;top:56%;width:176%;height:20%;background:var(--red);
+  clip-path:polygon(3% 10%,100% 0,97% 90%,0 100%);transform:rotate(-10deg)}
+.ph.f-slash .tri{position:absolute;z-index:0;left:60%;top:46%;width:110%;height:16%;background:#fff;clip-path:polygon(0 0,100% 64%,0 100%);transform:rotate(-10deg)}
+/* duo: ocean duotone + cyan tick ring */
+.ph.f-duo .img img{filter:grayscale(1) contrast(1.15) brightness(1.08)}
+.ph.f-duo .img::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,#7ff6ff 0%,#2a7fd0 45%,#0a1f5c 100%);mix-blend-mode:multiply}
+.ph.f-duo::before{content:'';position:absolute;inset:calc(var(--sz) * -.07);border-radius:50%;z-index:0;
+  background:repeating-conic-gradient(var(--cyan) 0 2.2deg,transparent 2.2deg 9deg);
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 10px),#000 calc(100% - 10px));mask:radial-gradient(farthest-side,transparent calc(100% - 10px),#000 calc(100% - 10px));animation:spin 90s linear infinite}
+.ph.f-duo .img{box-shadow:0 0 0 4px var(--cyan)}
+/* positions */
+.t-photo{position:absolute;left:50%;top:58px;transform:translateX(-50%);z-index:2}
+#scr-title.has-photo .t-wrap{top:410px}
+#scr-title.has-photo:not(.fr-moon) .moon-big{display:none}
+#scr-title.has-photo .moon-big{width:350px;height:350px;margin:0 0 0 -175px;top:13px}
+#scr-title.has-photo .t-name{font-size:200px}
+.st-photo{position:absolute;left:96px;top:170px}
+#scr-status.has-photo .party{top:520px}
+body.m .t-photo{top:9%} body.m #scr-title.has-photo .t-wrap{top:46%}
+body.m #scr-title.has-photo .moon-big{width:190px;height:190px;margin:-20px 0 0 -95px;top:9%}
+body.m #scr-title.has-photo .t-name{font-size:86px}
+body.m .st-photo{position:relative;left:auto;top:auto;margin:30px 0 34px;display:flex;justify-content:center}
+body.m #scr-status.has-photo{padding-top:30px}
+body.m #scr-status.has-photo .party{top:auto}
 
 /* ---------- TITLE ---------- */
 .moon-big{position:absolute;left:50%;top:50%;width:560px;height:560px;margin:-330px 0 0 -280px;border-radius:50%;
@@ -249,7 +291,7 @@ body.on-title .clock,body.on-title .prompts{display:none}
 
 /* ---------- MOBILE ---------- */
 body.m #stage{left:0;top:0;width:100vw;height:100vh;height:100dvh;transform:none}
-body.m .screen{overflow-y:auto;overflow-x:hidden;padding:18px 16px 110px;-webkit-overflow-scrolling:touch}
+body.m .screen{overflow-y:auto;overflow-x:hidden;padding:30px 16px 110px;-webkit-overflow-scrolling:touch}
 body.m #scr-menu{padding-top:120px;padding-bottom:120px}
 body.m #scr-menu.active{display:flex;flex-direction:column;justify-content:center}
 body.m .clock{right:12px;top:10px;transform:scale(.5);transform-origin:top right}
@@ -307,7 +349,6 @@ body.m .t-press{font-size:22px;letter-spacing:6px;bottom:70px}
 <body>
 <div id="stage">
   <div class="bg">
-    <div class="rays"></div>
     <canvas id="sea"></canvas>
     <div class="caustic a"></div>
     <div class="caustic b"></div>
@@ -345,6 +386,7 @@ body.m .t-press{font-size:22px;letter-spacing:6px;bottom:70px}
    ===================================================================== */
 const CONTENT = {
   name: 'JOSHUA',
+  photo: { src:'profile.jpg', frame:'slash', where:['status'] },  // frame: moon | ring | slash | duo ; where: title, status
   tagline: 'YOUR TAGLINE HERE',
   menu: [ // label = what visitors see; tag = the game screen it opens
     {id:'projects',   label:'PROJECTS',          tag:'COMMU',  desc:"Social Links you've forged."},
@@ -356,59 +398,56 @@ const CONTENT = {
     {id:'quest',      label:'UPCOMING PROJECTS', tag:'QUEST',  desc:'Requests not yet completed.'},
   ],
   status: {
-    party: [
-      {name:'JOSHUA',     lv:21,   hp:[140,140], sp:[95,95], lead:true},
-      {name:'EMPTY SLOT', lv:'--', hp:[0,1],     sp:[0,1]},
-      {name:'EMPTY SLOT', lv:'--', hp:[0,1],     sp:[0,1]},
-    ],
+    born: {year:2003, month:10},   // age is worked out from this (turns over on 1 October)
+    party: [ {name:'JOSHUA', lead:true} ],
     options: [
-      {tag:'LEADER', label:'ABOUT ME',   text:'', stats:true},
-      {tag:'PARTY',  label:'BACKGROUND', text:''},
-      {tag:'PARTY',  label:'FUN FACT',   text:''},
+      {tag:'LEADER', label:'ABOUT ME', text:'Computer Systems Engineering student at the University of Auckland, with interests in computational biology and chemistry.'},
+      {tag:'PARTY',  label:'SWIMMING', text:'Former competitive swimmer. Placed at the Secondary Schools competition and the NZ Short Course Championships.'},
+      {tag:'PARTY',  label:'HOBBIES',  list:['Table tennis (recreational)','Piano, up to Grade 7','Nature walks','Video games']},
+      {tag:'PARTY',  label:'FUN FACT', text:'Dolphins.'},
     ],
-    stats: [ {name:'ACADEMICS', lv:3}, {name:'CHARM', lv:3}, {name:'COURAGE', lv:3} ], // out of 6
   },
   commu: {
     tabs: ['PROJECTS','EXPERIENCE','EDUCATION'],  // each tab is also a main-menu page
     startTab: 'PROJECTS',
-    links: [  // info: any label/value pairs shown on the card; LINK values become clickable. rank: 10 = MAX
+    links: [  // info: any label/value pairs shown on the card; LINK values become clickable. 
       // ---------- PROJECTS ----------
-      {tab:'PROJECTS', arcana:'FORTUNE', num:'X', title:'BUSINESS FORECASTING', sub:'APR – MAY 2026', rank:10,
+      {tab:'PROJECTS', arcana:'FORTUNE', num:'X', title:'BUSINESS FORECASTING', sub:'APR – MAY 2026',
         info:{TYPE:'Python app', STACK:'pandas, SQLite, Matplotlib, Prophet', DATE:'Apr – May 2026', LINK:''},
         text:'Forecasting app for historical business sales across multiple segments. Compared ARIMA, SARIMAX, Prophet and linear regression on MAE and MAPE, with a pandas/SQLite pipeline and Matplotlib dashboards.'},
-      {tab:'PROJECTS', arcana:'CHARIOT', num:'VII', title:'PATH FINDING ROBOT', sub:'JUL – OCT 2026', rank:10,
+      {tab:'PROJECTS', arcana:'CHARIOT', num:'VII', title:'PATH FINDING ROBOT', sub:'JUL – OCT 2026',
         info:{TYPE:'Embedded C', STACK:'PSoC, custom PCB, PID, A*', DATE:'Jul – Oct 2026', LINK:''},
         text:'Autonomous line-following robot on a PSoC with a custom PCB and phototransistor sensing. C firmware for ADC acquisition, PID line following, PWM motor control and turn detection; A* plans the optimal route.'},
-      {tab:'PROJECTS', arcana:'JUSTICE', num:'VIII', title:'TRAFFIC SIGN ML', sub:'AUG – SEP 2026', rank:10,
+      {tab:'PROJECTS', arcana:'JUSTICE', num:'VIII', title:'TRAFFIC SIGN ML', sub:'AUG – SEP 2026',
         info:{TYPE:'Python ML', STACK:'scikit-learn, MLP, SVM', DATE:'Aug – Sep 2026', LINK:''},
         text:'43-class traffic sign recognition over 61,000+ images, comparing MLP and SVM. SHA-256 duplicate detection and group-aware splits to limit leakage; staged GridSearchCV with StratifiedGroupKFold.'},
-      {tab:'PROJECTS', arcana:'FOOL', num:'0', title:'FPGA FLAPPY BIRD', sub:'APR – JUN 2026', rank:10,
+      {tab:'PROJECTS', arcana:'FOOL', num:'0', title:'FPGA FLAPPY BIRD', sub:'APR – JUN 2026',
         info:{TYPE:'VHDL', STACK:'Cyclone V, VGA, PS/2', DATE:'Apr – Jun 2026', LINK:''},
         text:'Flappy Bird-style game on a Cyclone V FPGA with 640×480 VGA output and PS/2 mouse input. Modular RTL with FSMs for physics, obstacle generation and difficulty, plus ROM-based sprite rendering.'},
-      {tab:'PROJECTS', arcana:'TOWER', num:'XVI', title:'SMART ENERGY MONITOR', sub:'SEP – OCT 2025', rank:10,
+      {tab:'PROJECTS', arcana:'TOWER', num:'XVI', title:'SMART ENERGY MONITOR', sub:'SEP – OCT 2025',
         info:{TYPE:'Embedded / PCB', STACK:'ATmega328P, LTspice, Altium', DATE:'Sep – Oct 2025', LINK:''},
         text:'Real-time energy monitor with analogue voltage/current sensing and signal conditioning. Embedded C for ADC sampling, UART and 7-segment output; circuits simulated in LTspice and a double-layer PCB in Altium.'},
-      {tab:'PROJECTS', arcana:'MAGICIAN', num:'I', title:'PC BUILDER APP', sub:'MAY – JUN 2026', rank:10,
+      {tab:'PROJECTS', arcana:'MAGICIAN', num:'I', title:'PC BUILDER APP', sub:'MAY – JUN 2026',
         info:{TYPE:'Android / Java', STACK:'Firestore, RecyclerView, Glide', DATE:'May – Jun 2026', LINK:''},
         text:'Native Android app for browsing, searching and comparing PC components. Object-oriented architecture with async Firestore queries, reusable adapters, Glide image loading and debounced search.'},
-      {tab:'PROJECTS', arcana:'STAR', num:'XVII', title:'FLIGHT RESERVATION API', sub:'SEP 2026', rank:10,
+      {tab:'PROJECTS', arcana:'STAR', num:'XVII', title:'FLIGHT RESERVATION API', sub:'SEP 2026',
         info:{TYPE:'Java REST API', STACK:'Spring Boot, JPA/Hibernate, JWT', DATE:'Sep 2026', LINK:''},
         text:'Spring Boot REST service for flight search, authentication and seat booking. JWT auth via a custom argument resolver, timezone-aware JPQL search and transactional booking validation.'},
       // ---------- EXPERIENCE ----------
-      {tab:'EXPERIENCE', arcana:'SUN', num:'XIX', title:'TRENDFORCE', sub:'NOV 2026 – FEB 2027', rank:1,
+      {tab:'EXPERIENCE', arcana:'SUN', num:'XIX', title:'TRENDFORCE', sub:'NOV 2026 – FEB 2027',
         info:{ROLE:'Intern', WHERE:'Taiwan', DATE:'Nov 2026 – Feb 2027', STACK:'Kotlin, Compose, Swift, SwiftUI, RAG'},
         text:'Building a native content-reader app for company news and reports, Android first and then iOS. Then testing the AI agent platform: workflows, prompt tuning and RAG knowledge-base validation.'},
-      {tab:'EXPERIENCE', arcana:'HIEROPHANT', num:'V', title:'MYTUITION', sub:'APR 2022 – PRESENT', rank:9,
+      {tab:'EXPERIENCE', arcana:'HIEROPHANT', num:'V', title:'MYTUITION', sub:'APR 2022 – PRESENT',
         info:{ROLE:'Tutor', SUBJECTS:'Biology, Chemistry, Physics, Calculus', DATE:'Apr 2022 – Present'},
         text:'Tutor Year 7–13 students with custom lesson plans, lifting grades from Achieved / low Merit to Excellence.'},
-      {tab:'EXPERIENCE', arcana:'STRENGTH', num:'XI', title:'AUCKLAND COUNCIL', sub:'NOV 2023 – MAR 2024', rank:10,
+      {tab:'EXPERIENCE', arcana:'STRENGTH', num:'XI', title:'AUCKLAND COUNCIL', sub:'NOV 2023 – MAR 2024',
         info:{ROLE:'Lifeguard', DATE:'Nov 2023 – Mar 2024'},
         text:'Kept pools safe through active supervision, incident reporting, first aid response and facility checks.'},
-      {tab:'EXPERIENCE', arcana:'HERMIT', num:'IX', title:'SYNNEX', sub:'NOV 2019 – FEB 2021', rank:10,
+      {tab:'EXPERIENCE', arcana:'HERMIT', num:'IX', title:'SYNNEX', sub:'NOV 2019 – FEB 2021',
         info:{ROLE:'Warehouse Worker', DATE:'Nov 2019 – Feb 2021'},
         text:'Managed inventory records, inspected shipments, organised stock and supported warehouse operations.'},
       // ---------- EDUCATION ----------
-      {tab:'EDUCATION', arcana:'PRIESTESS', num:'II', title:'UNIVERSITY OF AUCKLAND', sub:'CLASS OF 2027', rank:8,
+      {tab:'EDUCATION', arcana:'PRIESTESS', num:'II', title:'UNIVERSITY OF AUCKLAND', sub:'CLASS OF 2027',
         info:{DEGREE:'BE (Hons)', SPEC:'Computer Systems', GRAD:'2027'},
         text:'Bachelor of Engineering (Honours), specialising in Computer Systems.'},
     ],
@@ -540,6 +579,30 @@ addEventListener('resize', fit); fit();
     ctx.restore();
   }
 
+  /* wavering light beams from the surface: drawn at 1/4 resolution and scaled up so they stay soft */
+  const rc=document.createElement('canvas'), rx=rc.getContext('2d'), RD=4;
+  const beams=Array.from({length:9},(_,i)=>({u:(i+.5)/9+rnd(-.04,.04), w:rnd(.025,.06), ph:rnd(0,6.3), f1:rnd(.15,.3), f2:rnd(.25,.5), f3:rnd(.4,.9), len:rnd(.65,.95)}));
+  function drawRays(t){
+    const w=Math.ceil(W/RD), h=Math.ceil(H/RD);
+    if(rc.width!==w||rc.height!==h){ rc.width=w; rc.height=h; }
+    rx.setTransform(1,0,0,1,0,0); rx.clearRect(0,0,w,h); rx.globalCompositeOperation='lighter';
+    const px=(mouse?mouse.x/W-.5:0)*-.04;
+    for(const B of beams){
+      const sway=Math.sin(t*B.f1+B.ph)*.035, x0=(B.u+sway+px)*w, top=B.w*w*(1+.35*Math.sin(t*B.f2+B.ph*2));
+      const tilt=(.16+Math.sin(t*B.f1*.7+B.ph)*.08)*h, L=B.len*h, bot=top*3.2;
+      const bend=Math.sin(t*B.f2+B.ph)*w*.03;
+      const a=.10+.07*Math.sin(t*B.f3+B.ph)+.04*Math.sin(t*B.f3*2.3+B.ph*3);
+      const g=rx.createLinearGradient(0,0,0,L); g.addColorStop(0,`rgba(200,245,255,${Math.max(0,a)})`); g.addColorStop(.55,`rgba(160,230,255,${Math.max(0,a*.45)})`); g.addColorStop(1,'rgba(160,230,255,0)');
+      rx.fillStyle=g; rx.beginPath();
+      rx.moveTo(x0-top/2,0); rx.lineTo(x0+top/2,0);
+      rx.quadraticCurveTo(x0+top/2+tilt*.5+bend,L*.5, x0+bot/2+tilt,L);
+      rx.lineTo(x0-bot/2+tilt,L);
+      rx.quadraticCurveTo(x0-top/2+tilt*.5+bend,L*.5, x0-top/2,0);
+      rx.fill();
+    }
+    ctx.save(); ctx.globalCompositeOperation='screen'; ctx.imageSmoothingEnabled=true; ctx.drawImage(rc,0,0,w*RD,h*RD); ctx.restore();
+  }
+
   /* distant shark: rendered at 1/6 resolution and scaled up so it stays muffled by distance */
   const sc=document.createElement('canvas'), sx=sc.getContext('2d'), DOWN=6;
   let shark=null, nextShark=performance.now()+rnd(7000,14000);
@@ -573,6 +636,7 @@ addEventListener('resize', fit); fit();
     const dt=Math.min(3,(now-last)/16.67); last=now;
     if(mouse && mouse.touch && now-mouse.t>1400) mouse=null;
     ctx.setTransform(R,0,0,R,0,0); ctx.clearRect(0,0,W,H);
+    drawRays(now/1000);
     // shark
     if(!shark && now>nextShark) spawnShark();
     if(shark){ shark.x+=shark.v*dt; shark.ph+=.045*dt; drawShark();
@@ -621,7 +685,26 @@ $('#artfile').onchange = e => {
   $('#art').innerHTML = `<img src="${URL.createObjectURL(f)}" alt="">`;
 };
 
+/* ---- photo (circular frame) ---- */
+const PH = Object.assign({}, CONTENT.photo||{});
+try{ const q=new URLSearchParams(location.search); if(q.get('frame')) PH.frame=q.get('frame'); if(q.get('where')) PH.where=q.get('where').split(','); }catch(e){}
+const textRing = (txt,id) => `<svg class="ringsvg" viewBox="0 0 1000 1000"><defs><path id="${id}" d="M500,500 m-420,0 a420,420 0 1,1 840,0 a420,420 0 1,1 -840,0"/></defs>`+
+  `<circle cx="500" cy="500" r="420" fill="none" stroke="#e6edfc" stroke-width="120" opacity=".95"/>`+
+  `<text font-family="Anton" font-size="96" fill="#9fb4de" letter-spacing="12" dominant-baseline="middle"><textPath href="#${id}">${txt.repeat(6)}</textPath></text></svg>`;
+function photoHTML(sz, ringText, id){
+  const f=PH.frame||'moon';
+  return `<div class="ph f-${f}" style="--sz:${sz}px">${f==='ring'?textRing(ringText,id):''}${f==='slash'?'<span class="tri"></span><span class="bar"></span>':''}`+
+    `<div class="img"><img src="${esc(PH.src)}" alt="${esc(CONTENT.name)}"></div></div>`;
+}
+const photoOn = w => PH.src && (PH.where||[]).includes(w);
+
 /* ---- title screen ---- */
+if(photoOn('title')){
+  const t=$('#scr-title'); t.classList.add('has-photo','fr-'+(PH.frame||'moon'));
+  const d=document.createElement('div'); d.className='t-photo'; t.appendChild(d);
+  const sizeTitle=()=>{ d.innerHTML=photoHTML(document.body.classList.contains('m')?150:270, (CONTENT.name+' · ').toUpperCase(), 'rpt'); };
+  sizeTitle(); addEventListener('resize',()=>{ clearTimeout(sizeTitle.t); sizeTitle.t=setTimeout(sizeTitle,150); });
+}
 $('#tname').innerHTML = [...CONTENT.name].map((c,i)=>`<span style="--i:${i}">${esc(c)}</span>`).join('');
 $('#ttag').textContent = CONTENT.tagline;
 screens.title = {el:$('#scr-title'), move(){}, confirm(){go('menu');}, enter(){}};
@@ -661,18 +744,21 @@ function pop(el){ el.classList.remove('pop'); void el.offsetWidth; el.classList.
   const ring = `<svg class="ring" viewBox="0 0 1000 1000"><defs><path id="rp" d="M500,500 m-440,0 a440,440 0 1,1 880,0 a440,440 0 1,1 -880,0"/></defs>`+
     `<circle cx="500" cy="500" r="440" fill="none" stroke="#e6edfc" stroke-width="120" opacity=".95"/>`+
     `<text font-family="Anton" font-size="104" fill="#9fb4de" letter-spacing="14" dominant-baseline="middle"><textPath href="#rp">${'STATUS · '.repeat(8)}</textPath></text></svg>`;
-  const pct = ([a,b]) => Math.round(100*a/b)+'%';
-  const party = S.party.map((p,i)=>`<div class="pm in ${p.lead?'lead':''} ${p.lv==='--'?'empty':''}" style="--i:${i};--d:${i+2}">
-      <span class="nm">${esc(p.name)}</span><span class="lv">Lv <b>${esc(p.lv)}</b></span>
-      <span class="gauge hp"><span class="n"><small>HP</small>${p.hp[0]}</span><span class="bar"><i style="--w:${pct(p.hp)}"></i></span></span>
-      <span class="gauge sp"><span class="n"><small>SP</small>${p.sp[0]}</span><span class="bar"><i style="--w:${pct(p.sp)}"></i></span></span></div>`).join('');
+  const now=new Date(), B=S.born||{};
+  const age = B.year ? now.getFullYear()-B.year-((now.getMonth()+1)<(B.month||1)?1:0) : '--';
+  const party = S.party.map((p,i)=>`<div class="pm in ${p.lead?'lead':''}" style="--i:${i};--d:${i+2}">
+      <span class="nm">${esc(p.name)}</span><span class="lv">AGE <b>${esc(p.lead?age:(p.age??'--'))}</b></span></div>`).join('');
   const opts = S.options.map((o,i)=>`<div class="opt in" data-i="${i}" style="--i:${i};--d:${i+1}"><span class="tag">${esc(o.tag)}</span><span class="lbl">${esc(o.label)}</span></div>`).join('');
-  const el = makeScreen('status', ring + `<div class="party">${party}</div><div class="opts">${opts}</div><div class="card sdetail in" style="--d:5" id="sdet"></div>` + `<button class="backbtn" data-back>◀ BACK</button>`);
+  const withPhoto = photoOn('status');
+  const ringOrPhoto = withPhoto
+    ? `<div class="st-photo in" style="--d:1">${photoHTML(document.body.classList.contains('m')?170:250, 'STATUS · ', 'rps')}</div>` : ring;
+  const el = makeScreen('status', ringOrPhoto + `<div class="party">${party}</div><div class="opts">${opts}</div><div class="card sdetail in" style="--d:5" id="sdet"></div>` + `<button class="backbtn" data-back>◀ BACK</button>`);
+  if(withPhoto) el.classList.add('has-photo');
   function render(){
     el.querySelectorAll('.opt').forEach((o,j)=>o.classList.toggle('sel',j===sel));
     const o=S.options[sel], d=el.querySelector('#sdet');
-    d.innerHTML = `<div class="kick">${esc(o.tag)} · ${esc(o.label)}</div><p>${ghost(o.text,'Write something here.')}</p>` +
-      (o.stats ? `<div class="stats">${S.stats.map(s=>`<b>${esc(s.name)}</b><span class="seg">${Array.from({length:6},(_,i)=>`<i class="${i<s.lv?'on':''}"></i>`).join('')}</span>`).join('')}</div>` : '');
+    d.innerHTML = `<div class="kick">${esc(o.tag)} · ${esc(o.label)}</div>` +
+      (o.list ? `<ul class="dl">${o.list.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>` : `<p>${ghost(o.text,'Write something here.')}</p>`);
     pop(d);
   }
   el.addEventListener('click',e=>{const o=e.target.closest('.opt'); if(o){sel=+o.dataset.i; render();}});
@@ -691,11 +777,10 @@ function pop(el){ el.classList.remove('pop'); void el.offsetWidth; el.classList.
     const L=items(), box=el.querySelector('#arcs');
     box.classList.toggle('dense', L.length>5);
     if(full) box.innerHTML = L.length ? L.map((l,i)=>`<div class="arc in" data-i="${i}" style="--i:${i};--d:${i+1}">
-        <span class="num l${String(l.num).length}">${esc(l.num)}</span><span class="nm"><b>${esc(l.title)}</b><small>${esc(l.arcana)} · ${esc(l.sub)}</small></span>
-        <span class="rk"><small>RANK</small><b>${l.rank>=10?'MAX':esc(l.rank)}</b></span></div>`).join('') : `<div class="arc-empty">No links yet.</div>`;
+        <span class="num l${String(l.num).length}">${esc(l.num)}</span><span class="nm"><b>${esc(l.title)}</b><small>${esc(l.arcana)} · ${esc(l.sub)}</small></span></div>`).join('') : `<div class="arc-empty">No links yet.</div>`;
     box.querySelectorAll('.arc').forEach((a,j)=>a.classList.toggle('sel',j===sel));
     const l=L[sel], d=el.querySelector('#cdet');
-    d.innerHTML = l ? `<div class="kick">${esc(l.arcana)} · ${esc(l.num)}</div><h3>${esc(l.title)}</h3>${pips(l.rank)}
+    d.innerHTML = l ? `<div class="kick">${esc(l.arcana)} · ${esc(l.num)}</div><h3>${esc(l.title)}</h3>
       <dl>${Object.entries(l.info||{ROLE:'',STACK:'',DATE:'',LINK:''}).map(([k,v])=>`<dt>${esc(k)}</dt><dd>${
         k==='LINK' && v ? `<a href="${esc(v)}" target="_blank" rel="noopener">${esc(v.replace(/^https?:\/\//,''))}</a>` : ghost(v,'—')}</dd>`).join('')}</dl>
       <p>${ghost(l.text,'Add a description here.')}</p>` : '';
