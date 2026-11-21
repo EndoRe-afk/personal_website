@@ -19,34 +19,33 @@ a{color:inherit;text-decoration:none}
 
 #stage{position:absolute;left:50%;top:50%;width:1600px;height:900px;overflow:hidden;
   transform:translate(-50%,-50%) scale(var(--s,1));
-  background:linear-gradient(180deg,#1d4dff 0%,#0b2ae6 28%,#0719b4 62%,#040c6a 100%)}
+  background:linear-gradient(180deg,#3a9cc2 0%,#1d6f99 20%,#0f4a72 48%,#082f4f 74%,#03172b 100%)}
 
 /* ---------- underwater background ---------- */
 .bg{position:absolute;inset:0;pointer-events:none}
-.caustic{position:absolute;left:-10%;right:-10%;top:-6%;height:62%;mix-blend-mode:screen;filter:blur(2px);
+.caustic{position:absolute;left:-10%;right:-10%;top:-6%;height:58%;mix-blend-mode:screen;filter:blur(3px);translate:calc(var(--px,0) * -14px) calc(var(--py,0) * -6px);transition:translate .6s ease-out;
   -webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.8) 35%,transparent 100%);
           mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.8) 35%,transparent 100%)}
 .caustic.a{background:
-  radial-gradient(ellipse 70px 26px at 15% 20%,rgba(130,255,255,.75),transparent 70%),
-  radial-gradient(ellipse 110px 34px at 55% 45%,rgba(110,245,255,.6),transparent 70%),
-  radial-gradient(ellipse 50px 20px at 80% 15%,rgba(160,255,255,.7),transparent 70%),
-  radial-gradient(ellipse 90px 30px at 35% 75%,rgba(100,230,255,.45),transparent 70%);
+  radial-gradient(ellipse 70px 26px at 15% 20%,rgba(200,240,255,.5),transparent 70%),
+  radial-gradient(ellipse 110px 34px at 55% 45%,rgba(190,235,255,.42),transparent 70%),
+  radial-gradient(ellipse 50px 20px at 80% 15%,rgba(210,245,255,.5),transparent 70%),
+  radial-gradient(ellipse 90px 30px at 35% 75%,rgba(180,230,250,.3),transparent 70%);
   background-size:380px 210px;animation:drift 18s linear infinite}
 .caustic.b{background:
-  radial-gradient(ellipse 60px 22px at 30% 30%,rgba(140,255,250,.6),transparent 70%),
-  radial-gradient(ellipse 120px 30px at 70% 60%,rgba(90,220,255,.5),transparent 70%),
-  radial-gradient(ellipse 40px 16px at 90% 85%,rgba(170,255,255,.6),transparent 70%);
+  radial-gradient(ellipse 60px 22px at 30% 30%,rgba(200,240,255,.42),transparent 70%),
+  radial-gradient(ellipse 120px 30px at 70% 60%,rgba(170,225,250,.34),transparent 70%),
+  radial-gradient(ellipse 40px 16px at 90% 85%,rgba(215,245,255,.42),transparent 70%);
   background-size:300px 170px;animation:drift2 13s linear infinite;opacity:.85}
 @keyframes drift{to{background-position:380px 60px}}
 @keyframes drift2{to{background-position:-300px 40px}}
-.rays{position:absolute;inset:-10% -20% 20% -20%;
-  background:repeating-linear-gradient(103deg,rgba(255,255,255,.07) 0 50px,transparent 50px 190px);
+.rays{position:absolute;inset:-10% -20% 20% -20%;translate:calc(var(--px,0) * -28px) 0;transition:translate .8s ease-out;
+  background:repeating-linear-gradient(103deg,rgba(220,245,255,.06) 0 60px,transparent 60px 210px);
   -webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%);
   animation:sway 9s ease-in-out infinite alternate}
 @keyframes sway{to{transform:translateX(60px)}}
-.bub{position:absolute;bottom:-30px;border-radius:50%;border:2px solid rgba(190,250,255,.55);background:rgba(190,250,255,.08);animation:rise linear infinite}
-@keyframes rise{to{transform:translate(var(--dx),-1000px)}}
-.shade{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(2,6,50,.75),transparent 60%)}
+.shade{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 125%,rgba(1,8,20,.8),transparent 62%)}
+#sea{position:absolute;inset:0;width:100%;height:100%}
 
 /* ---------- screens ---------- */
 .screen{position:absolute;inset:0;display:none}
@@ -67,8 +66,8 @@ a{color:inherit;text-decoration:none}
 .art .ph span{font-weight:700;font-style:italic;font-size:24px;color:rgba(200,240,255,.8)}
 .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
-.menu{position:absolute;left:80px;top:104px;list-style:none;transform:rotate(-8deg);z-index:4}
-.mi{position:relative;width:max-content;font-family:Anton;font-size:var(--fs);line-height:.8;letter-spacing:-1px;
+.menu{position:absolute;left:80px;top:400px;list-style:none;transform:translateY(-50%) rotate(-8deg);z-index:4}
+.mi{position:relative;width:max-content;font-family:Anton;font-size:var(--fs);line-height:.9;letter-spacing:-1px;
   color:var(--c);cursor:pointer;user-select:none;white-space:nowrap;
   transform:translateX(var(--x)) skewX(-12deg);transition:transform .18s cubic-bezier(.2,.9,.2,1),color .15s}
 .mi .t{position:relative;z-index:2}
@@ -105,10 +104,10 @@ a{color:inherit;text-decoration:none}
   background:var(--ink);color:var(--cyan);padding:4px 22px;transform:skewX(-14deg)}
 .backbtn:hover{background:var(--red);color:#fff}
 
-.glist{position:absolute;left:80px;top:250px;width:780px}
+.glist{position:absolute;left:70px;top:250px;width:800px}
 .grow{position:relative;height:80px;margin-bottom:12px;display:flex;align-items:center;gap:22px;padding:0 44px;cursor:pointer;
   background:var(--ink);clip-path:polygon(2.5% 0,100% 0,97.5% 100%,0 100%);
-  font-weight:800;font-style:italic;font-size:34px;transform:translateX(calc(var(--i) * -14px));transition:background .12s,color .12s}
+  font-weight:800;font-style:italic;font-size:30px;transform:translateX(calc(var(--i) * -14px));transition:background .12s,color .12s}
 .grow .lab{font-family:Anton;font-style:normal;font-size:26px;color:var(--cyan);min-width:120px;letter-spacing:1px}
 .grow .val{margin-left:auto;font-family:Anton;font-style:normal;font-size:30px;color:var(--cyan)}
 .grow.sel{background:#fff;color:var(--ink)}
@@ -118,7 +117,7 @@ a{color:inherit;text-decoration:none}
   clip-path:polygon(4% 0,100% 3%,96% 100%,0 97%)}
 .card .kick{font-family:Anton;font-size:24px;letter-spacing:3px;color:var(--red)}
 .card h3{font-family:Anton;font-size:60px;line-height:1;margin:6px 0 18px;font-weight:400}
-.card p{font-size:27px;font-weight:600;line-height:1.25}
+.card p{font-size:25px;font-weight:600;line-height:1.28}
 .card .ghost{color:#8a93b8;font-style:italic}
 .card dl{display:grid;grid-template-columns:120px 1fr;gap:6px 14px;margin:18px 0;font-size:26px}
 .card dt{font-family:Anton;color:var(--blue);letter-spacing:1px}
@@ -184,13 +183,43 @@ a{color:inherit;text-decoration:none}
 .ccard h3{font-size:52px}
 .ccard dl{grid-template-columns:96px 1fr;font-size:24px}
 
+/* long numerals + no wrapping in list rows */
+.arc .num.l3{font-size:24px} .arc .num.l4{font-size:19px}
+.arc-list.dense .arc .num.l3{font-size:20px} .arc-list.dense .arc .num.l4{font-size:16px}
+.arc .nm{flex:1;min-width:0}
+.arc .nm b,.arc .nm small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.arc .rk{margin-left:12px}
+body.m #scr-commu.active{display:flex;flex-direction:column}
+body.m #scr-commu .big-title,body.m #scr-commu .subtag{align-self:flex-start;flex:none}
+body.m #scr-commu .tabs{order:1;flex:none} body.m #scr-commu .arc-list{order:2;flex:none} body.m #scr-commu .ccard{order:3;flex:none}
+body.m .arc .nm b{font-size:21px} body.m .arc-list.dense .arc .nm b{font-size:20px}
+body.m .arc .nm small{font-size:11px;letter-spacing:1px}
+body.m .arc .rk{margin-right:26px} body.m .arc .rk small{font-size:11px} body.m .arc .rk b,body.m .arc-list.dense .arc .rk b{font-size:30px}
+body.m .arc .num.l3{font-size:17px} body.m .arc .num.l4{font-size:14px}
+body.m .ccard p{font-size:18px}
+
+/* dense list (more than 5 links) */
+.arc-list.dense .arc{height:74px;margin-bottom:9px}
+.arc-list.dense .arc .num{width:56px;height:56px;font-size:26px}
+.arc-list.dense .arc .nm b{font-size:32px}
+.arc-list.dense .arc .rk b{font-size:50px}
+.ccard p{font-size:22px;line-height:1.3}
+.ccard dd{color:var(--ink);font-style:normal}
+.ccard dd a{color:var(--blue);text-decoration:underline}
+body.m .arc-list.dense .arc{height:66px}
+body.m .arc-list.dense .arc .nm b{font-size:22px}
+
 /* ---------- SYSTEM ---------- */
 .tiles{position:absolute;left:70px;top:260px;width:280px}
 .tile{height:96px;margin-bottom:16px;display:flex;align-items:center;gap:16px;padding:0 30px;background:#090d33;
   clip-path:polygon(6% 0,100% 0,94% 100%,0 100%)}
 .tile small{font-family:Anton;font-size:18px;background:var(--red);padding:0 8px;letter-spacing:1px}
 .tile b{font-family:Anton;font-weight:400;font-size:56px;font-style:italic}
-.socs{position:absolute;left:400px;top:250px;width:1120px}
+.socs{position:absolute;left:90px;top:250px;width:1180px}
+.sc-title{font-size:130px}
+body.m .sc-title{white-space:normal;font-size:66px;line-height:.92;margin-bottom:14px}
+.grow>span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.grow .val{flex:none}
 .soc{position:relative;height:82px;margin-bottom:14px;display:flex;align-items:center;gap:22px;padding:0 40px;cursor:pointer;
   background:#fff;color:var(--ink);clip-path:polygon(2% 0,100% 0,98% 100%,0 100%);transform:translateX(calc(var(--i) * -16px))}
 .soc .ic{width:52px;height:36px;background:var(--blue);clip-path:polygon(14% 0,100% 0,86% 100%,0 100%)}
@@ -221,7 +250,8 @@ body.on-title .clock,body.on-title .prompts{display:none}
 /* ---------- MOBILE ---------- */
 body.m #stage{left:0;top:0;width:100vw;height:100vh;height:100dvh;transform:none}
 body.m .screen{overflow-y:auto;overflow-x:hidden;padding:18px 16px 110px;-webkit-overflow-scrolling:touch}
-body.m #scr-menu{padding-top:150px}
+body.m #scr-menu{padding-top:120px;padding-bottom:120px}
+body.m #scr-menu.active{display:flex;flex-direction:column;justify-content:center}
 body.m .clock{right:12px;top:10px;transform:scale(.5);transform-origin:top right}
 body.m.sub .clock{display:none}
 body.m .prompts{display:none}
@@ -278,9 +308,9 @@ body.m .t-press{font-size:22px;letter-spacing:6px;bottom:70px}
 <div id="stage">
   <div class="bg">
     <div class="rays"></div>
+    <canvas id="sea"></canvas>
     <div class="caustic a"></div>
     <div class="caustic b"></div>
-    <div id="bubbles"></div>
     <div class="shade"></div>
   </div>
 
@@ -320,7 +350,7 @@ const CONTENT = {
     {id:'projects',   label:'PROJECTS',          tag:'COMMU',  desc:"Social Links you've forged."},
     {id:'experience', label:'EXPERIENCE',        tag:'COMMU',  desc:'Bonds formed on the job.'},
     {id:'education',  label:'EDUCATION',         tag:'COMMU',  desc:'Where the training happened.'},
-    {id:'system',     label:'SOCIALS',           tag:'SYSTEM', desc:'Ways to reach me.'},
+    {id:'system',     label:'SOCIALS',           tag:'CONTACT', desc:'Ways to reach me.'},
     {id:'status',     label:'ABOUT ME',          tag:'STATUS', desc:"Check your party's condition."},
     {id:'skill',      label:'SKILLS',            tag:'SKILL',  desc:'Abilities you can use in battle.'},
     {id:'quest',      label:'UPCOMING PROJECTS', tag:'QUEST',  desc:'Requests not yet completed.'},
@@ -341,16 +371,46 @@ const CONTENT = {
   commu: {
     tabs: ['PROJECTS','EXPERIENCE','EDUCATION'],  // each tab is also a main-menu page
     startTab: 'PROJECTS',
-    links: [
-      {tab:'PROJECTS',   arcana:'FOOL',       num:'0',    title:'PROJECT 01', sub:'UNTITLED', rank:3},
-      {tab:'PROJECTS',   arcana:'MAGICIAN',   num:'I',    title:'PROJECT 02', sub:'UNTITLED', rank:3},
-      {tab:'PROJECTS',   arcana:'CHARIOT',    num:'VII',  title:'PROJECT 03', sub:'UNTITLED', rank:3},
-      {tab:'PROJECTS',   arcana:'HERMIT',     num:'IX',   title:'PROJECT 04', sub:'UNTITLED', rank:3},
-      {tab:'PROJECTS',   arcana:'FORTUNE',    num:'X',    title:'PROJECT 05', sub:'UNTITLED', rank:3},
-      {tab:'EDUCATION',  arcana:'PRIESTESS',  num:'II',   title:'EDUCATION 01', sub:'UNTITLED', rank:3},
-      {tab:'EDUCATION',  arcana:'HIEROPHANT', num:'V',    title:'EDUCATION 02', sub:'UNTITLED', rank:3},
-      {tab:'EXPERIENCE', arcana:'EMPEROR',    num:'IV',   title:'EXPERIENCE 01', sub:'UNTITLED', rank:3},
-      {tab:'EXPERIENCE', arcana:'JUSTICE',    num:'VIII', title:'EXPERIENCE 02', sub:'UNTITLED', rank:3},
+    links: [  // info: any label/value pairs shown on the card; LINK values become clickable. rank: 10 = MAX
+      // ---------- PROJECTS ----------
+      {tab:'PROJECTS', arcana:'FORTUNE', num:'X', title:'BUSINESS FORECASTING', sub:'APR – MAY 2026', rank:10,
+        info:{TYPE:'Python app', STACK:'pandas, SQLite, Matplotlib, Prophet', DATE:'Apr – May 2026', LINK:''},
+        text:'Forecasting app for historical business sales across multiple segments. Compared ARIMA, SARIMAX, Prophet and linear regression on MAE and MAPE, with a pandas/SQLite pipeline and Matplotlib dashboards.'},
+      {tab:'PROJECTS', arcana:'CHARIOT', num:'VII', title:'PATH FINDING ROBOT', sub:'JUL – OCT 2026', rank:10,
+        info:{TYPE:'Embedded C', STACK:'PSoC, custom PCB, PID, A*', DATE:'Jul – Oct 2026', LINK:''},
+        text:'Autonomous line-following robot on a PSoC with a custom PCB and phototransistor sensing. C firmware for ADC acquisition, PID line following, PWM motor control and turn detection; A* plans the optimal route.'},
+      {tab:'PROJECTS', arcana:'JUSTICE', num:'VIII', title:'TRAFFIC SIGN ML', sub:'AUG – SEP 2026', rank:10,
+        info:{TYPE:'Python ML', STACK:'scikit-learn, MLP, SVM', DATE:'Aug – Sep 2026', LINK:''},
+        text:'43-class traffic sign recognition over 61,000+ images, comparing MLP and SVM. SHA-256 duplicate detection and group-aware splits to limit leakage; staged GridSearchCV with StratifiedGroupKFold.'},
+      {tab:'PROJECTS', arcana:'FOOL', num:'0', title:'FPGA FLAPPY BIRD', sub:'APR – JUN 2026', rank:10,
+        info:{TYPE:'VHDL', STACK:'Cyclone V, VGA, PS/2', DATE:'Apr – Jun 2026', LINK:''},
+        text:'Flappy Bird-style game on a Cyclone V FPGA with 640×480 VGA output and PS/2 mouse input. Modular RTL with FSMs for physics, obstacle generation and difficulty, plus ROM-based sprite rendering.'},
+      {tab:'PROJECTS', arcana:'TOWER', num:'XVI', title:'SMART ENERGY MONITOR', sub:'SEP – OCT 2025', rank:10,
+        info:{TYPE:'Embedded / PCB', STACK:'ATmega328P, LTspice, Altium', DATE:'Sep – Oct 2025', LINK:''},
+        text:'Real-time energy monitor with analogue voltage/current sensing and signal conditioning. Embedded C for ADC sampling, UART and 7-segment output; circuits simulated in LTspice and a double-layer PCB in Altium.'},
+      {tab:'PROJECTS', arcana:'MAGICIAN', num:'I', title:'PC BUILDER APP', sub:'MAY – JUN 2026', rank:10,
+        info:{TYPE:'Android / Java', STACK:'Firestore, RecyclerView, Glide', DATE:'May – Jun 2026', LINK:''},
+        text:'Native Android app for browsing, searching and comparing PC components. Object-oriented architecture with async Firestore queries, reusable adapters, Glide image loading and debounced search.'},
+      {tab:'PROJECTS', arcana:'STAR', num:'XVII', title:'FLIGHT RESERVATION API', sub:'SEP 2026', rank:10,
+        info:{TYPE:'Java REST API', STACK:'Spring Boot, JPA/Hibernate, JWT', DATE:'Sep 2026', LINK:''},
+        text:'Spring Boot REST service for flight search, authentication and seat booking. JWT auth via a custom argument resolver, timezone-aware JPQL search and transactional booking validation.'},
+      // ---------- EXPERIENCE ----------
+      {tab:'EXPERIENCE', arcana:'SUN', num:'XIX', title:'TRENDFORCE', sub:'NOV 2026 – FEB 2027', rank:1,
+        info:{ROLE:'Intern', WHERE:'Taiwan', DATE:'Nov 2026 – Feb 2027', STACK:'Kotlin, Compose, Swift, SwiftUI, RAG'},
+        text:'Building a native content-reader app for company news and reports, Android first and then iOS. Then testing the AI agent platform: workflows, prompt tuning and RAG knowledge-base validation.'},
+      {tab:'EXPERIENCE', arcana:'HIEROPHANT', num:'V', title:'MYTUITION', sub:'APR 2022 – PRESENT', rank:9,
+        info:{ROLE:'Tutor', SUBJECTS:'Biology, Chemistry, Physics, Calculus', DATE:'Apr 2022 – Present'},
+        text:'Tutor Year 7–13 students with custom lesson plans, lifting grades from Achieved / low Merit to Excellence.'},
+      {tab:'EXPERIENCE', arcana:'STRENGTH', num:'XI', title:'AUCKLAND COUNCIL', sub:'NOV 2023 – MAR 2024', rank:10,
+        info:{ROLE:'Lifeguard', DATE:'Nov 2023 – Mar 2024'},
+        text:'Kept pools safe through active supervision, incident reporting, first aid response and facility checks.'},
+      {tab:'EXPERIENCE', arcana:'HERMIT', num:'IX', title:'SYNNEX', sub:'NOV 2019 – FEB 2021', rank:10,
+        info:{ROLE:'Warehouse Worker', DATE:'Nov 2019 – Feb 2021'},
+        text:'Managed inventory records, inspected shipments, organised stock and supported warehouse operations.'},
+      // ---------- EDUCATION ----------
+      {tab:'EDUCATION', arcana:'PRIESTESS', num:'II', title:'UNIVERSITY OF AUCKLAND', sub:'CLASS OF 2027', rank:8,
+        info:{DEGREE:'BE (Hons)', SPEC:'Computer Systems', GRAD:'2027'},
+        text:'Bachelor of Engineering (Honours), specialising in Computer Systems.'},
     ],
   },
   // simple list screens: rows of {lab, name, val, kick, text}
@@ -360,15 +420,17 @@ const CONTENT = {
       {lab:'ELEC', name:'Skill 03', val:'Lv ?'}, {lab:'WIND', name:'Skill 04', val:'Lv ?'},
       {lab:'LIGHT',name:'Skill 05', val:'Lv ?'}]},
     quest:    {title:'QUEST',    sub:'UPCOMING PROJECTS', rows:[
-      {lab:'REQ 01', name:'Upcoming 01', val:'PLANNED'}, {lab:'REQ 02', name:'Upcoming 02', val:'PLANNED'},
+      {lab:'PART IV', name:'Electronic Binding Affinity', val:'MAR 2027',
+        text:'Part IV honours project at the University of Auckland. A protein–ligand binding-affinity predictor that fuses frozen MACE-POLAR-1 electronic representations and ESM-2 protein embeddings with conventional chemical and structural features, using an InteractionGraphNet-based model benchmarked on LP-PDBBind.'},
+      {lab:'REQ 02', name:'Upcoming 02', val:'PLANNED'},
       {lab:'REQ 03', name:'Upcoming 03', val:'NEW'}]},
   },
   system: {
     socials: [
-      {name:'GITHUB',    handle:'@your-handle',     url:''},
-      {name:'LINKEDIN',  handle:'/in/your-handle',  url:''},
-      {name:'EMAIL',     handle:'you@example.com',  url:''},
-      {name:'INSTAGRAM', handle:'@your-handle',     url:''},
+      {name:'GITHUB',    handle:'@EndoRe-afk',            url:'https://github.com/EndoRe-afk'},
+      {name:'LINKEDIN',  handle:'/in/joshua-kao',         url:'https://www.linkedin.com/in/joshua-kao-5b03922b8/'},
+      {name:'EMAIL',     handle:'endore001@gmail.com',    url:'mailto:endore001@gmail.com'},
+      {name:'INSTAGRAM', handle:'@endore001',             url:'https://www.instagram.com/endore001/'},
     ],
   },
 };
@@ -389,16 +451,149 @@ function fit(){
 }
 addEventListener('resize', fit); fit();
 
-/* ---- bubbles ---- */
+
+/* ---- living sea: bubbles, fish that flee the cursor, a distant shark ---- */
 (function(){
-  const box = $('#bubbles');
-  for (let i=0;i<28;i++){
-    const b = document.createElement('span'), s = 6 + Math.random()*22;
-    b.className='bub';
-    b.style.cssText = `left:${Math.random()*100}%;width:${s}px;height:${s}px;--dx:${(Math.random()*120-60)|0}px;`+
-      `animation-duration:${9+Math.random()*12}s;animation-delay:${-Math.random()*20}s;opacity:${.35+Math.random()*.5}`;
-    box.appendChild(b);
+  const SEA = { fishColour:'#e6f1f5', fish:16, fishMobile:9, bubbles:70, bubblesMobile:38 };   // tweak here
+  const cv=$('#sea'), ctx=cv.getContext('2d'), rnd=(a,b)=>a+Math.random()*(b-a);
+  let W=1600, H=900, R=1, mouse=null, last=performance.now();
+  const mobile=()=>document.body.classList.contains('m');
+  function size(){
+    W=stage.clientWidth; H=stage.clientHeight;
+    const s=mobile()?1:(parseFloat(stage.style.getPropertyValue('--s'))||1);
+    R=Math.min(2,devicePixelRatio||1)*s; cv.width=Math.round(W*R); cv.height=Math.round(H*R);
   }
+  addEventListener('resize',size); size();
+
+  /* pointer → stage coordinates (+ gentle parallax on the light layers) */
+  function track(e){
+    const r=stage.getBoundingClientRect();
+    mouse={x:(e.clientX-r.left)/r.width*W, y:(e.clientY-r.top)/r.height*H, t:performance.now(), touch:e.pointerType!=='mouse'};
+    stage.style.setProperty('--px',(mouse.x/W-.5).toFixed(3)); stage.style.setProperty('--py',(mouse.y/H-.5).toFixed(3));
+  }
+  addEventListener('pointermove',track,{passive:true});
+  addEventListener('pointerdown',track,{passive:true});
+  document.addEventListener('mouseout',e=>{ if(!e.relatedTarget) mouse=null; });
+
+  /* pre-rendered bubble sprite: thin bright rim, specular highlight, faint inner reflection */
+  const bs=document.createElement('canvas'); bs.width=bs.height=128; const b=bs.getContext('2d');
+  let g=b.createRadialGradient(64,64,0,64,64,62);
+  g.addColorStop(0,'rgba(210,240,255,.03)'); g.addColorStop(.72,'rgba(210,240,255,.07)');
+  g.addColorStop(.92,'rgba(235,250,255,.6)'); g.addColorStop(1,'rgba(235,250,255,0)');
+  b.fillStyle=g; b.beginPath(); b.arc(64,64,62,0,7); b.fill();
+  g=b.createRadialGradient(44,40,0,44,40,20); g.addColorStop(0,'rgba(255,255,255,.95)'); g.addColorStop(1,'rgba(255,255,255,0)');
+  b.fillStyle=g; b.beginPath(); b.arc(44,40,20,0,7); b.fill();
+  b.strokeStyle='rgba(255,255,255,.3)'; b.lineWidth=4; b.lineCap='round'; b.beginPath(); b.arc(64,64,47,.3*Math.PI,.72*Math.PI); b.stroke();
+
+  const vents=[rnd(.1,.3),rnd(.45,.6),rnd(.75,.92)];
+  function newBubble(initial){
+    const stream=Math.random()<.55, r=stream?rnd(1.5,6):rnd(3,15);
+    return { x:(stream?vents[(Math.random()*3)|0]+rnd(-.015,.015):Math.random())*W, y:initial?rnd(0,H):H+rnd(10,120),
+      r, vy:.35+Math.sqrt(r)*.32, ph:rnd(0,6.3), f:rnd(.03,.07), amp:rnd(.2,.6)*(1+r*.04), near:r>9, pushx:0 };
+  }
+  let bubbles=[];
+  function seedBubbles(){ const n=mobile()?SEA.bubblesMobile:SEA.bubbles; bubbles=Array.from({length:n},()=>newBubble(true)); }
+  seedBubbles();
+
+  /* fish */
+  let fish=[];
+  function seedFish(){
+    const n=mobile()?SEA.fishMobile:SEA.fish;
+    fish=Array.from({length:n},()=>{ const a=rnd(0,6.3), base=rnd(.6,1.2);
+      return {x:rnd(80,W-80), y:rnd(140,H-120), vx:Math.cos(a)*base, vy:Math.sin(a)*base*.4, a, base, L:rnd(24,58), ph:rnd(0,6.3), wand:a}; });
+  }
+  seedFish();
+  let wasMobile=mobile();
+  addEventListener('resize',()=>{ if(mobile()!==wasMobile){ wasMobile=mobile(); seedFish(); seedBubbles(); } });
+
+  function steerFish(f,dt,now){
+    f.wand+=rnd(-.08,.08)*dt;
+    let ax=Math.cos(f.wand)*.025, ay=Math.sin(f.wand)*.012;
+    const m=90, top=110;
+    if(f.x<m) ax+=(m-f.x)*.0025; if(f.x>W-m) ax-=(f.x-W+m)*.0025;
+    if(f.y<top) ay+=(top-f.y)*.0025; if(f.y>H-m) ay-=(f.y-H+m)*.0025;
+    for(const o of fish){ if(o===f) continue; const dx=f.x-o.x, dy=f.y-o.y, d=Math.hypot(dx,dy)||1, lim=(f.L+o.L)*.7;
+      if(d<lim){ ax+=dx/d*(1-d/lim)*.05; ay+=dy/d*(1-d/lim)*.05; } }
+    let panic=0;
+    if(mouse){ const dx=f.x-mouse.x, dy=f.y-mouse.y, d=Math.hypot(dx,dy)||1, FR=mobile()?150:200;
+      if(d<FR){ panic=1-d/FR; ax+=dx/d*panic*.75; ay+=dy/d*panic*.75; f.wand=Math.atan2(dy,dx); } }
+    f.vx+=ax*dt; f.vy+=ay*dt; f.vy*=Math.pow(.985,dt);
+    const max=f.base*(1+panic*3.4); let sp=Math.hypot(f.vx,f.vy);
+    if(sp>max){ f.vx*=max/sp; f.vy*=max/sp; sp=max; } else if(sp<.3){ f.vx*=.3/(sp||1); f.vy*=.3/(sp||1); sp=.3; }
+    f.x+=f.vx*dt; f.y+=f.vy*dt; f.ph+=(.1+sp*.16)*dt;
+    let da=Math.atan2(f.vy,f.vx)-f.a; da=Math.atan2(Math.sin(da),Math.cos(da)); f.a+=da*Math.min(1,.18*dt);
+  }
+  function drawFish(f){
+    const L=f.L, h=L*.2, wag=Math.sin(f.ph)*h*.6;
+    ctx.save(); ctx.translate(f.x,f.y); ctx.rotate(f.a); if(Math.cos(f.a)<0) ctx.scale(1,-1);
+    ctx.globalAlpha=.55+L/58*.45;
+    ctx.fillStyle=SEA.fishColour;
+    ctx.shadowColor='rgba(0,12,28,.55)'; ctx.shadowBlur=L*.4; ctx.shadowOffsetY=L*.32;
+    ctx.beginPath();
+    ctx.moveTo(-L*.32,0); ctx.lineTo(-L*.6,-h*1.1+wag); ctx.quadraticCurveTo(-L*.49,wag*.6,-L*.6,h*1.1+wag); ctx.closePath();     // tail
+    ctx.moveTo(L*.5,0); ctx.bezierCurveTo(L*.32,-h*1.3,-L*.18,-h*1.05,-L*.36,wag*.3); ctx.bezierCurveTo(-L*.18,h*1.05,L*.32,h*1.3,L*.5,0); // body
+    ctx.moveTo(L*.1,-h*1.02); ctx.lineTo(-L*.07,-h*1.6); ctx.lineTo(-L*.17,-h*.9);                                                  // dorsal fin
+    ctx.moveTo(L*.12,h*.55); ctx.lineTo(-L*.02,h*1.1+wag*.4); ctx.lineTo(L*.02,h*.45);                                              // pectoral fin
+    ctx.fill();
+    ctx.shadowColor='transparent'; ctx.fillStyle='rgba(6,22,38,.8)';
+    ctx.beginPath(); ctx.arc(L*.33,-h*.22,Math.max(1.2,L*.034),0,7); ctx.fill();
+    ctx.restore();
+  }
+
+  /* distant shark: rendered at 1/6 resolution and scaled up so it stays muffled by distance */
+  const sc=document.createElement('canvas'), sx=sc.getContext('2d'), DOWN=6;
+  let shark=null, nextShark=performance.now()+rnd(7000,14000);
+  function spawnShark(){ const dir=Math.random()<.5?1:-1, k=rnd(.7,1.25), L=430*k;
+    shark={dir,L,y:H*rnd(.32,.66),x:dir>0?-L*.7:W+L*.7,v:.42*k*dir,ph:0}; }
+  function drawShark(){
+    const S=shark, L=S.L, ow=Math.ceil(L*1.3/DOWN), oh=Math.ceil(L*.62/DOWN);
+    if(sc.width!==ow||sc.height!==oh){ sc.width=ow; sc.height=oh; }
+    sx.setTransform(1,0,0,1,0,0); sx.clearRect(0,0,ow,oh);
+    sx.setTransform(S.dir/DOWN,0,0,1/DOWN,ow/2,oh/2);
+    const sway=Math.sin(S.ph)*L*.045;
+    sx.fillStyle='#02121f'; sx.beginPath();
+    sx.moveTo(L*.5,0);
+    sx.bezierCurveTo(L*.44,-L*.06,L*.28,-L*.1,L*.12,-L*.1);
+    sx.lineTo(-L*.02,-L*.27); sx.quadraticCurveTo(-L*.05,-L*.12,-L*.12,-L*.085);
+    sx.quadraticCurveTo(-L*.28,-L*.05,-L*.38,-L*.02);
+    sx.lineTo(-L*.56+sway,-L*.21); sx.quadraticCurveTo(-L*.47+sway*.5,-L*.02,-L*.53+sway,L*.12);
+    sx.lineTo(-L*.38,L*.025);
+    sx.quadraticCurveTo(-L*.2,L*.07,-L*.02,L*.075);
+    sx.lineTo(-L*.1,L*.21); sx.lineTo(L*.1,L*.08);
+    sx.bezierCurveTo(L*.3,L*.085,L*.45,L*.045,L*.5,0);
+    sx.fill();
+    const edge=Math.min(1,Math.min(S.x+L*.6, W+L*.6-S.x)/(L*.9));
+    ctx.save(); ctx.globalAlpha=.25*Math.max(0,edge); ctx.imageSmoothingEnabled=true;
+    if('filter' in ctx) ctx.filter='blur(3px)';
+    ctx.drawImage(sc,S.x-ow*DOWN/2,S.y-oh*DOWN/2,ow*DOWN,oh*DOWN);
+    ctx.restore();
+  }
+
+  function frame(now){
+    const dt=Math.min(3,(now-last)/16.67); last=now;
+    if(mouse && mouse.touch && now-mouse.t>1400) mouse=null;
+    ctx.setTransform(R,0,0,R,0,0); ctx.clearRect(0,0,W,H);
+    // shark
+    if(!shark && now>nextShark) spawnShark();
+    if(shark){ shark.x+=shark.v*dt; shark.ph+=.045*dt; drawShark();
+      if((shark.dir>0&&shark.x>W+shark.L*.7)||(shark.dir<0&&shark.x<-shark.L*.7)){ shark=null; nextShark=now+rnd(22000,45000); } }
+    // bubbles (update)
+    for(const bb of bubbles){
+      bb.y-=bb.vy*dt; bb.ph+=bb.f*dt;
+      if(mouse){ const dx=bb.x-mouse.x, dy=bb.y-mouse.y, d=Math.hypot(dx,dy)||1; if(d<110) bb.pushx+=dx/d*(1-d/110)*.9*dt; }
+      bb.pushx*=Math.pow(.94,dt); bb.x+=Math.sin(bb.ph)*bb.amp*dt*.5+bb.pushx*dt*.2;
+      if(bb.y<-30) Object.assign(bb,newBubble(false));
+    }
+    const drawB=bb=>{ const w=bb.r*2*(1+Math.sin(bb.ph*2)*.06), h=bb.r*2*(1-Math.sin(bb.ph*2)*.06);
+      ctx.globalAlpha=bb.near?.9:.55; ctx.drawImage(bs,bb.x-w/2,bb.y-h/2,w,h); };
+    bubbles.forEach(bb=>{ if(!bb.near) drawB(bb); });
+    ctx.globalAlpha=1;
+    for(const f of fish){ steerFish(f,dt,now); drawFish(f); }
+    bubbles.forEach(bb=>{ if(bb.near) drawB(bb); });
+    ctx.globalAlpha=1;
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
 })();
 
 /* ---- clock + moon phase (P3 calendar widget) ---- */
@@ -494,13 +689,15 @@ function pop(el){ el.classList.remove('pop'); void el.offsetWidth; el.classList.
   function render(full){
     el.querySelectorAll('.tb').forEach((b,j)=>b.classList.toggle('on',j===tab));
     const L=items(), box=el.querySelector('#arcs');
+    box.classList.toggle('dense', L.length>5);
     if(full) box.innerHTML = L.length ? L.map((l,i)=>`<div class="arc in" data-i="${i}" style="--i:${i};--d:${i+1}">
-        <span class="num">${esc(l.num)}</span><span class="nm"><b>${esc(l.title)}</b><small>${esc(l.arcana)} · ${esc(l.sub)}</small></span>
+        <span class="num l${String(l.num).length}">${esc(l.num)}</span><span class="nm"><b>${esc(l.title)}</b><small>${esc(l.arcana)} · ${esc(l.sub)}</small></span>
         <span class="rk"><small>RANK</small><b>${l.rank>=10?'MAX':esc(l.rank)}</b></span></div>`).join('') : `<div class="arc-empty">No links yet.</div>`;
     box.querySelectorAll('.arc').forEach((a,j)=>a.classList.toggle('sel',j===sel));
     const l=L[sel], d=el.querySelector('#cdet');
     d.innerHTML = l ? `<div class="kick">${esc(l.arcana)} · ${esc(l.num)}</div><h3>${esc(l.title)}</h3>${pips(l.rank)}
-      <dl><dt>ROLE</dt><dd>${ghost(l.role,'—')}</dd><dt>STACK</dt><dd>${ghost(l.stack,'—')}</dd><dt>DATE</dt><dd>${ghost(l.date,'—')}</dd><dt>LINK</dt><dd>${l.link?`<a href="${esc(l.link)}" target="_blank" rel="noopener">${esc(l.link)}</a>`:'<span class="ghost">—</span>'}</dd></dl>
+      <dl>${Object.entries(l.info||{ROLE:'',STACK:'',DATE:'',LINK:''}).map(([k,v])=>`<dt>${esc(k)}</dt><dd>${
+        k==='LINK' && v ? `<a href="${esc(v)}" target="_blank" rel="noopener">${esc(v.replace(/^https?:\/\//,''))}</a>` : ghost(v,'—')}</dd>`).join('')}</dl>
       <p>${ghost(l.text,'Add a description here.')}</p>` : '';
     pop(d);
   }
@@ -533,13 +730,9 @@ Object.entries(CONTENT.lists).forEach(([id,S])=>{
 /* SYSTEM (socials) */
 (function(){
   const S=CONTENT.system; let sel=0;
-  const nProj = CONTENT.commu.links.filter(l=>l.tab==='PROJECTS').length;
-  const nWork = CONTENT.commu.links.filter(l=>l.tab==='EXPERIENCE').length;
-  const tiles = [['PROJECTS',String(nProj).padStart(2,'0')],['ROLES',String(nWork).padStart(2,'0')],['SOCIALS',String(S.socials.length).padStart(2,'0')]]
-    .map(([k,v],i)=>`<div class="tile in" style="--d:${i+1}"><small>${k}</small><b>${v}</b></div>`).join('');
-  const socs = S.socials.map((s,i)=>`<a class="soc in" data-i="${i}" style="--i:${i};--d:${i+2}" ${s.url?`href="${esc(s.url)}" target="_blank" rel="noopener"`:''}>
+  const socs = S.socials.map((s,i)=>`<a class="soc in" data-i="${i}" style="--i:${i};--d:${i+2}" ${s.url?`href="${esc(s.url)}"${s.url.startsWith('mailto:')?'':' target="_blank" rel="noopener"'}`:''}>
       <span class="ic"></span><span class="n">${esc(s.name)}</span><span class="h">${esc(s.handle)}</span><span class="go">OPEN ▶</span></a>`).join('');
-  const el = makeScreen('system', header('SYSTEM','SOCIALS & CONTACT') + `<div class="tiles">${tiles}</div><div class="socs">${socs}</div>`);
+  const el = makeScreen('system', `<div class="big-title inL sc-title" style="--d:0">SOCIALS &amp; CONTACT</div><button class="backbtn" data-back>◀ BACK</button>` + `<div class="socs">${socs}</div>`);
   function render(){ el.querySelectorAll('.soc').forEach((r,j)=>r.classList.toggle('sel',j===sel)); }
   el.addEventListener('mouseover',e=>{const r=e.target.closest('.soc'); if(r){sel=+r.dataset.i; render();}});
   el.addEventListener('click',e=>{const r=e.target.closest('.soc'); if(r && !r.getAttribute('href')) e.preventDefault();});
